@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{6C1B957E-6C6B-4B70-B0FB-170511B29901}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="forms/BarcodeCaptureSimpleSample/BarcodeCaptureSimpleSample/Views/MainPage.xaml.cs">
+    <Files>
+      <File FileName="forms/BarcodeCaptureSimpleSample/BarcodeCaptureSimpleSample/ViewModels/MainPageViewModel.cs" Line="72" Column="66" />
+      <File FileName="forms/BarcodeCaptureSimpleSample/BarcodeCaptureSimpleSample/App.xaml.cs" />
+      <File FileName="forms/BarcodeCaptureSimpleSample/BarcodeCaptureSimpleSample/Views/MainPage.xaml" />
+      <File FileName="forms/BarcodeCaptureSimpleSample/BarcodeCaptureSimpleSample/Views/MainPage.xaml.cs" Line="45" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FormsSamples" expanded="True">
+            <Node name="Forms" expanded="True">
+              <Node name="BarcodeCaptureSimpleSample" expanded="True">
+                <Node name="BarcodeCaptureSimpleSample" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Forms.BarcodeCaptureSimpleSample.BarcodeCaptureSimpleSample.Android PreferredExecutionTarget="Android.r_11_0_-_api_30" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
