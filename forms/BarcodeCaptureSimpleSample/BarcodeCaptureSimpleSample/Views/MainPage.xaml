@@ -9,20 +9,12 @@
         <vm:MainPageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <scanditCore:DataCaptureView 
-                AbsoluteLayout.LayoutBounds="0,0,1,1"
-                AbsoluteLayout.LayoutFlags="All"
-                DataCaptureContext="{Binding DataCaptureContext}" >
-                <scanditBarcode:BarcodeCaptureOverlay 
-                    BarcodeCapture="{Binding BarcodeCapture}" 
-                    Viewfinder="{Binding Viewfinder}"
-                    Style="Frame" />
-            </scanditCore:DataCaptureView>
-            <Button Text="Test"
-                    AbsoluteLayout.LayoutBounds="0,0,0.2,0.2"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Clicked="Button_Clicked"/>
-        </AbsoluteLayout>
+        <StackLayout x:Name="_stacklayout">
+
+            <Button 
+                Text="Test"
+                Clicked="Button_Clicked"/>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

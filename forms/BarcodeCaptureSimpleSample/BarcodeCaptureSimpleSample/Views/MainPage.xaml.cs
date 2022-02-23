@@ -13,6 +13,8 @@
  */
 
 using BarcodeCaptureSimpleSample.ViewModels;
+using Scandit.DataCapture.Barcode.UI.Unified;
+using Scandit.DataCapture.Core.UI.Unified;
 using Xamarin.Forms;
 
 namespace BarcodeCaptureSimpleSample.Views
@@ -20,6 +22,7 @@ namespace BarcodeCaptureSimpleSample.Views
     public partial class MainPage : ContentPage
     {
         private readonly MainPageViewModel viewModel;
+        private DataCaptureView dataCaptureView;
 
         public MainPage()
         {
@@ -30,13 +33,32 @@ namespace BarcodeCaptureSimpleSample.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _ = this.viewModel.OnResumeAsync();
+
+            var overlay = new BarcodeCaptureOverlay()
+            {
+                BarcodeCapture = viewModel.BarcodeCapture,
+                Viewfinder = viewModel.Viewfinder,
+                Style = BarcodeCaptureOverlayStyle.Frame
+            };
+
+            dataCaptureView = new DataCaptureView()
+            {
+                HeightRequest = 400
+            };
+            dataCaptureView.AddOverlay(overlay);
+
+            _stacklayout.Children.Add(dataCaptureView);
+
+            _ = viewModel.OnResumeAsync();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             this.viewModel.OnSleep();
+
+            _stacklayout.Children.RemoveAt(1);
+            dataCaptureView = null;
         }
 
         void Button_Clicked(System.Object sender, System.EventArgs e)
