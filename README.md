@@ -1,9 +1,9 @@
 # Workaround for Scandit DataCaptureView issue "consecutive scanner screens"
 
 Note: This bug only happens in Android. iOS works as expected.
-1. Open a xaml Page which contains DataCaptureView -> The DataCaptureView works this time.
-2. Navigate to another page which also contains DataCaptureView. -> The DataCaptureView works this time.
-3. Click on BackButton (or call Navigation.Pop()) to remove the 2nd page from the stack and return back to the 1st page -> DataCaptureView stops working.
+1. Open a xaml Page which contains DataCaptureView -> The DataCaptureView works this time (The cameraView can move)
+2. Navigate to another page which also contains DataCaptureView. -> The DataCaptureView works this time. (The cameraView can move)
+3. Click on BackButton (or call Navigation.Pop()) to remove the 2nd page from the stack and return back to the 1st page -> DataCaptureView stops working (The cameraView is freezed, it cannot move)
 
 **The 1st Workaround**: make sure that the current DataCaptureView is the last one created on the UI navigation stack. 
 1. remove the first page from the Navigation Stack before navigating to the second one, 
