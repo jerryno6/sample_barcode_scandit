@@ -34,32 +34,33 @@ namespace BarcodeCaptureSimpleSample.Views
         {
             base.OnAppearing();
 
-            var overlay = new BarcodeCaptureOverlay()
-            {
-                BarcodeCapture = viewModel.BarcodeCapture,
-                Viewfinder = viewModel.Viewfinder,
-                Style = BarcodeCaptureOverlayStyle.Frame
-            };
+			var overlay = new BarcodeCaptureOverlay()
+			{
+				BarcodeCapture = viewModel.BarcodeCapture,
+				Viewfinder = viewModel.Viewfinder,
+				Style = BarcodeCaptureOverlayStyle.Frame
+			};
 
-            dataCaptureView = new DataCaptureView()
-            {
-                HeightRequest = 400
-            };
-            dataCaptureView.AddOverlay(overlay);
+			dataCaptureView = new DataCaptureView()
+			{
+				HeightRequest = 400
+			};
+			dataCaptureView.AddOverlay(overlay);
 
-            _stacklayout.Children.Add(dataCaptureView);
+			_stacklayout.Children.Add(dataCaptureView);
 
-            _ = viewModel.OnResumeAsync();
+			_ = viewModel.OnResumeAsync();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
             this.viewModel.OnSleep();
 
-            _stacklayout.Children.RemoveAt(1);
-            dataCaptureView = null;
-        }
+			_stacklayout.Children.Remove(dataCaptureView);
+			dataCaptureView = null;
+		}
 
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
